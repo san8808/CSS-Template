@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+header {
+  background-color: black;
+  color: white;
+  height: 50px;
+  text-align: center;
+}
+
+main > ::first-letter {
+  /*Here the first letter of the direct child of the main is affected*/
+  color: red;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+main > * {
+  /*widht 50% krne se content half divide ho jate hai*/
+  width: 50%;
+  float: left;
+  border: 1px solid black;
+  padding: 10px;
+  height: 500px;
+  overflow: hidden;
+}
+
+main article p:first-child img {
+  /*This will only select the image of the first paragraph*/
+  max-width: 200px;
+  float: left;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%; /*Using this image will resize itself*/
+}
+
+nav {
+  display: flex; /*parent class*/
+}
+
+nav div {
+  background-color: lightgray;
+  flex: 1; /*child class*/
+  height: 70px;
+  padding: 10px;
+  margin-left: 2px;
+  text-align: center;
+  margin-right: 2px;
+  line-height: 70px;
+}
+
+nav div > a:hover {
+  background-color: red;
+  color: white;
+  cursor: grab;
+}
+
+nav div > a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid white;
+  align-content: center;
+  display: block;
+}
+
+footer {
+  clear: both;
+  margin: 20px 0;
+  padding: 0 25px;
+  border: 1px solid black;
+  text-align: center;
+  width: 90%;
+  height: 200px;
+  margin-left: 5%; /*can be used for centering the item*/
+}
+
+footer > div {
+  text-align: center;
+  margin: auto;
+  width: 20%;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column; /*flex direction hamesha parent me mention hota hai*/
+    width: 100%;
+  }
+  main > * {
+    width: 100%;
+  }
+}
